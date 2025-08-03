@@ -1,0 +1,39 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Login",
+      "request": "launch",
+      "mainClass": "university.Login",
+      "projectName": "University-Management-System-main_c39c96be"
+    },
+    {
+      "type": "java",
+      "name": "Run Login.java",
+      "request": "launch",
+      "mainClass": "university.Login",
+      "vmArgs": "--module-path \"C:/Users/tajmu/openjfx-24.0.1_windows-x64_bin-sdk/javafx-sdk-24.0.1/lib\" --add-modules javafx.controls,javafx.fxml",
+      "projectName": "University-Management-System-main"
+    },
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": true,
+      "cwd": "d:/All Project/University-Management-System-main/src/university/icons",
+      "program": "d:/All Project/University-Management-System-main/src/university/icons/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Compile JavaFX",
+      "type": "shell",
+      "command": "javac",
+      "args": [
+        "--module-path",
+        "C:/Users/tajmu/openjfx-24.0.1_windows-x64_bin-sdk/javafx-sdk-24.0.1/lib",
+        "--add-modules",
+        "javafx.controls,javafx.fxml",
+        "-d",
+        "out",
+        "src/university/Login.java"
+      ],
+      "group": "build",
+      "problemMatcher": []
+    }
+  ]
+}
