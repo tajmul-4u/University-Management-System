@@ -95,14 +95,6 @@ public class Project extends Application {
         r2.setOnAction(e -> new UpdateTeacher().start(new Stage()));
         report.getItems().addAll(r1, r2);
 
-        // Fee Details Menu
-        Menu fee = createModernMenu("Fee Details", "#1ABC9C");
-        MenuItem s1 = createModernMenuItem("Fee Structure", "/icons/icon7.png", "Ctrl+R");
-        MenuItem s2 = createModernMenuItem("Student Fee Form", "/icons/icon8.png", "Ctrl+R");
-        s1.setOnAction(e -> new FeeStructure().start(new Stage()));
-        s2.setOnAction(e -> new StudentFeeForm().start(new Stage()));
-        fee.getItems().addAll(s1, s2);
-
         // Statistics Menu (separate)
         Menu statisticsMenu = createModernMenu("Statistics", "#8E44AD");
         MenuItem statsItem = createModernMenuItem("View Statistics", "/icons/icon13.jpg", "Ctrl+T");
@@ -115,7 +107,7 @@ public class Project extends Application {
         ex.setOnAction(e -> System.exit(0));
         exit.getItems().add(ex);
 
-        menuBar.getMenus().addAll(master, user, attendance, attendanceDetail, exam, report, fee, statisticsMenu, exit);
+        menuBar.getMenus().addAll(master, user, attendance, attendanceDetail, exam, report, statisticsMenu, exit);
         
         HBox menuContainer = new HBox(menuBar);
         menuContainer.setAlignment(Pos.CENTER);
