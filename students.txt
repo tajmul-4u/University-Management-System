@@ -1,1 +1,13 @@
 Tajmul Islam,Md Majadul Mondal,23,13-07-02,Joypurhat,01521724362,tajmulislam02@gmail.com,5.00,5.00,223322,1533568,B.Sc,Computer Science and Engineering
+Samiul Jewel,Kamal,23,12-3-01,Natore,01345676543,samiul@gmail.com,5.00,5.00,987652345678,2202020,B.Sc,Computer Science and Engineering
+Abdul Jobbar Joy,Babul Hossain,23,05-05-2002,Thakurgoan,01731818221,joy@gmail,5.00,5.00,34567965987,2202007,B.Sc,Computer Science and Engineering
+Amijeet,Avijeet,23,08-06-2002,Rangpur,01738764901,Amijeet@gmail,5.00,5.00,45678654356,2202001,B.Sc,Computer Science and Engineering
+Rahul,Jamil Hossain,23,02-04-2003,Bogura,01356893211,Rahul@gmail,5.00,5.00,48765434567,2202046,B.Sc,Computer Science and Engineering
+Ahir,Alom,23,22-07-2002,Gaibandha,01733888243,Ahir@gmail,5.00,5.00,6789023456,2202047,B.Sc,Computer Science and Engineering
+Akash,Abdullah,24,11-02-2002,Sirajgong,01733835561,Akash@gmail,5.00,5.00,3567809873,2202010,B.Sc,Computer Science and Engineering
+Adiba,Amirul,23,12-02-2003,Bogura,01753875402,Adiba@gmail,5.00,5.00,3456798765,2202018,B.Sc,Computer Science and Engineering
+Rokon,Akbor,22,05-06-2003,Lalmonirlat,01356893678,Rokon@gmail,5.00,5.00,345678998765,2202023,B.Sc,Computer Science and Engineering
+Nafis,Hafiz,23,22-06-2002,Rangpur,01345678553,Nafis@gmail.com,5.00,5.00,345678923456,2202041,B.Sc,Computer Science and Engineering
+Zulfikar,Ibrahim,22,03-08-2003,Dinajpur,01747468632,Zulfikar@gmail,5.00,5.00,345678987678,2202004,B.Sc,Computer Science and Engineering
+Rubai,Haider,24,22-07-2001,Dhaka,01345678761,Rubai@gmail,5.00,5.00,987654234567,2202028,B.Sc,Computer Science and Engineering
+kawsik,kishor Pal,23,12-02-2002,Chadpur,01756782349,kawsik@gmail,5.00,5.00,34876534567,2202036,B.Sc,Computer Science and Engineering

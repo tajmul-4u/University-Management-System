@@ -85,12 +85,12 @@ public class UpdateTeacher extends Application {
         emailField = createStyledTextField();
         classXField = createStyledTextField();
         grid.add(new Label("Email ID:"), 0, 3); grid.add(emailField, 1, 3);
-        grid.add(new Label("Class X (%):"), 2, 3); grid.add(classXField, 3, 3);
+        grid.add(new Label("Undergraduate (cgpa):"), 2, 3); grid.add(classXField, 3, 3);
         // Row 5
         classXiiField = createStyledTextField();
         cnicField = createStyledTextField();
-        grid.add(new Label("Class XII (%):"), 0, 4); grid.add(classXiiField, 1, 4);
-        grid.add(new Label("CNIC:"), 2, 4); grid.add(cnicField, 3, 4);
+        grid.add(new Label("Graduate (cgpa):"), 0, 4); grid.add(classXiiField, 1, 4);
+        grid.add(new Label("NIC:"), 2, 4); grid.add(cnicField, 3, 4);
         // Row 6
         empIdField = createStyledTextField();
         educationField = createStyledTextField();

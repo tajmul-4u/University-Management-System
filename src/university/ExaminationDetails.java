@@ -104,10 +104,10 @@ public class ExaminationDetails extends Application {
         rollCol.setCellValueFactory(new PropertyValueFactory<>("rollno"));
         TableColumn<StudentRecord, String> nameCol = new TableColumn<>("Name");
         nameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
-        TableColumn<StudentRecord, String> courseCol = new TableColumn<>("Course");
-        courseCol.setCellValueFactory(new PropertyValueFactory<>("course"));
-        TableColumn<StudentRecord, String> branchCol = new TableColumn<>("Branch");
-        branchCol.setCellValueFactory(new PropertyValueFactory<>("branch"));
+        TableColumn<StudentRecord, String> courseCol = new TableColumn<>("Degree");
+        courseCol.setCellValueFactory(new PropertyValueFactory<>("Degree"));
+        TableColumn<StudentRecord, String> branchCol = new TableColumn<>("Department");
+        branchCol.setCellValueFactory(new PropertyValueFactory<>("Department"));
         TableColumn<StudentRecord, String> semCol = new TableColumn<>("Semester");
         semCol.setCellValueFactory(new PropertyValueFactory<>("semester"));
         table.getColumns().addAll(rollCol, nameCol, courseCol, branchCol, semCol);

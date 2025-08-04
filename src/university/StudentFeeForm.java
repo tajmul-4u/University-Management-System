@@ -58,13 +58,13 @@ public class StudentFeeForm extends Application {
         formGrid.add(fnameField, 1, 2);
 
         // Course
-        formGrid.add(new Label("Course"), 0, 3);
+        formGrid.add(new Label("Degree"), 0, 3);
         courseComboBox = new ComboBox<>();
         courseComboBox.setPrefWidth(220);
         formGrid.add(courseComboBox, 1, 3);
 
         // Branch
-        formGrid.add(new Label("Branch"), 0, 4);
+        formGrid.add(new Label("Department"), 0, 4);
         branchComboBox = new ComboBox<>();
         branchComboBox.setPrefWidth(220);
         formGrid.add(branchComboBox, 1, 4);
@@ -130,7 +130,7 @@ public class StudentFeeForm extends Application {
             rollComboBox.setItems(rollList);
             branchComboBox.setItems(FXCollections.observableArrayList("Computer Science", "Electrical", "Mechanical"));
             semesterComboBox.setItems(FXCollections.observableArrayList("1st Semester", "2nd Semester", "3rd Semester", "4th Semester"));
-            courseComboBox.setItems(FXCollections.observableArrayList("B.Tech", "M.Tech", "MBA"));
+            courseComboBox.setItems(FXCollections.observableArrayList("BSc", "BBA", "MBA"));
         } catch (java.io.FileNotFoundException e) {
             showError("Failed to load data from file: students.txt not found.");
         } catch (Exception e) {

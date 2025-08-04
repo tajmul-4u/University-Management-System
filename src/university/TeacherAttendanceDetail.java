@@ -117,7 +117,7 @@ public class TeacherAttendanceDetail extends Application {
         statusCol.setCellValueFactory(new PropertyValueFactory<>("status"));
         statusCol.setStyle("-fx-alignment: CENTER;");
         TableColumn<AttendanceRecord, String> deptCol = new TableColumn<>("Department");
-        deptCol.setCellValueFactory(new PropertyValueFactory<>("department"));
+        deptCol.setCellValueFactory(new PropertyValueFactory<>("Department"));
         deptCol.setStyle("-fx-alignment: CENTER;");
         attendanceTable.getColumns().addAll(empIdCol, dateCol, firstCol, secondCol, statusCol, deptCol);
     }

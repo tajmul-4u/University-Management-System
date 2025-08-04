@@ -2,3 +2,16 @@ admin,admin
 tajmul,tajmul
 asdf,asdf
 rabbi,rabbi
+samiul,samiul
+Abdul Jobbar Joy,Joy
+Amijeet,Amijeet
+Rahul,Rahul
+Ahir,Ahir
+Akash,Akash
+Adiba,Adiba
+Rokon,Rokon
+Nafis,Nafis
+Nafis,Nafis
+Zulfikar,Zulfikar
+Rubai,Rubai
+kawsik,kawsik

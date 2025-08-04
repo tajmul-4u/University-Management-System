@@ -1,1 +1,7 @@
 Wadud,Podder,28,23-04-1980,Joypurhat,01987655678,waduad@gamil.com,3.67,4.00,2345678,112233,BSc,Computer Systems Engineering,Professor
+Dr. Md. Abdullah Al Mamun,Rahim,50,05-02-1975,Dinajpur,01886890345,maun@gmail.com,3.93,3.91,23456876545,23456734,BSc,Computer Systems Engineering,Professor
+Adiba Mahjabin Nitu,Rasedul Islam,51,05-06-1974,HSTU Campus Area,01735673456,adiba@gmail.com,3.93,3,95,3456787654234,45678956,BSc,Computer Systems Engineering,Professor
+Dr.Md.Delowar Hossain,Anowar Islam,52,01-07-1973,Dhaka,01312345687,delowar@gmail.com,3.92,3.96,34567098765,34567876345,BSc,Computer Systems Engineering,Professor
+Dr.Ashis kumar Mandal,Avijeet Mandal,45,01-01-1975,Manikgong,01723456876,ashis@gmail.com,3.96,3.91,8765345687,7652345673,BSc,Computer Systems Engineering,Professor
+Dr.Md.Arsad Ali,Abdul Karim,40,01-10-1984,Dinajpur,01745678965,arshad@gmail.com,3.97,3.95,34567887654345,345678765434,BSc,Computer Systems Engineering,Professor
+Md.Fazle Rabbi,Abdul Hakim,40,05-05-1985,Rajshahi,01734567887,rabbi@gmail.com,3.95,3.97,345678876543,234567887654,BSc,Computer Systems Engineering,Professor

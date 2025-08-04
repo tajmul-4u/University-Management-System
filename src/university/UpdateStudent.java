@@ -85,20 +85,20 @@ public class UpdateStudent extends Application {
         emailField = createStyledTextField();
         classXField = createStyledTextField();
         grid.add(new Label("Email ID:"), 0, 3); grid.add(emailField, 1, 3);
-        grid.add(new Label("Class X (%):"), 2, 3); grid.add(classXField, 3, 3);
+        grid.add(new Label("Class X (gpa):"), 2, 3); grid.add(classXField, 3, 3);
         // Row 5
         classXiiField = createStyledTextField();
         cnicField = createStyledTextField();
-        grid.add(new Label("Class XII (%):"), 0, 4); grid.add(classXiiField, 1, 4);
-        grid.add(new Label("CNIC:"), 2, 4); grid.add(cnicField, 3, 4);
+        grid.add(new Label("Class XII (gpa):"), 0, 4); grid.add(classXiiField, 1, 4);
+        grid.add(new Label("NIC:"), 2, 4); grid.add(cnicField, 3, 4);
         // Row 6
         rollField = createStyledTextField();
         courseField = createStyledTextField();
         grid.add(new Label("Roll No:"), 0, 5); grid.add(rollField, 1, 5);
-        grid.add(new Label("Course:"), 2, 5); grid.add(courseField, 3, 5);
+        grid.add(new Label("Degree:"), 2, 5); grid.add(courseField, 3, 5);
         // Row 7
         branchField = createStyledTextField();
-        grid.add(new Label("Branch:"), 0, 6); grid.add(branchField, 1, 6);
+        grid.add(new Label("Department:"), 0, 6); grid.add(branchField, 1, 6);
         return grid;
     }
 

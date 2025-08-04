@@ -49,7 +49,7 @@ public class Project extends Application {
 
         // Master Menu
         Menu master = createModernMenu("Join", "#3498DB");
-        MenuItem m1 = createModernMenuItem("New Faculty", "/icons/icon1.png", "Ctrl+D");
+        MenuItem m1 = createModernMenuItem("Join New Teacher", "/icons/icon1.png", "Ctrl+D");
         MenuItem m2 = createModernMenuItem("New Student Admission", "/icons/icon2.png", "Ctrl+M");
         m1.setOnAction(e -> new AddTeacher().start(new Stage()));
         m2.setOnAction(e -> new AddStudent().start(new Stage()));

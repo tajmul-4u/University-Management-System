@@ -27,12 +27,12 @@ public class StudentDetails extends Application {
 
         String[] columnNames = {
                 "Name", "Father's Name", "Age", "DOB", "Address", "Phone", "Email",
-                "Class X (%)", "Class XII (%)", "CNIC No", "Roll No", "Course", "Branch"
+                "Class X (%)", "Class XII (%)", "NIC No", "Roll No", "Degree", "Department"
         };
 
         String[] propertyNames = {
                 "name", "fathersName", "age", "dob", "address", "phone", "email",
-                "classX", "classXII", "cnic", "rollNo", "course", "branch"
+                "classX", "classXII", "nic", "rollNo", "Degree", "Department"
         };
 
         for (int i = 0; i < columnNames.length; i++) {
