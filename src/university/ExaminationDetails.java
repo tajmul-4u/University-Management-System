@@ -130,6 +130,8 @@ public class ExaminationDetails extends Application {
                 }
             }
             table.setItems(tableData);
+        } catch (java.io.FileNotFoundException e) {
+            showError("Error: students.txt file not found.");
         } catch (Exception e) {
             e.printStackTrace();
             showError("Error loading student data: " + e.getMessage());

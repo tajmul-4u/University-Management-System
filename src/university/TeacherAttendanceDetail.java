@@ -186,9 +186,17 @@ public class TeacherAttendanceDetail extends Application {
                         recordCount++;
                     }
                 }
-                String labelText = recordCount == 0 ? "No attendance records found" :
-                        String.format("Total Records: %d | Last Updated: %s", recordCount, java.time.LocalDateTime.now().format(java.time.format.DateTimeFormatter.ofPattern("MMM dd, yyyy HH:mm")));
-                javafx.application.Platform.runLater(() -> recordCountLabel.setText(labelText));
+                final int finalRecordCount = recordCount;
+                javafx.application.Platform.runLater(() -> {
+                    String labelText = finalRecordCount == 0 ? "No attendance records found" :
+                            String.format("Total Records: %d | Last Updated: %s", finalRecordCount, java.time.LocalDateTime.now().format(java.time.format.DateTimeFormatter.ofPattern("MMM dd, yyyy HH:mm")));
+                    recordCountLabel.setText(labelText);
+                });
+            } catch (java.io.FileNotFoundException e) {
+                javafx.application.Platform.runLater(() -> {
+                    showErrorMessage("File Error", "Error: attendance_teacher.txt file not found.");
+                    recordCountLabel.setText("Error loading data");
+                });
             } catch (Exception e) {
                 e.printStackTrace();
                 javafx.application.Platform.runLater(() -> {

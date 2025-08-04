@@ -28,13 +28,17 @@ public class Project extends Application {
 
         // Try to add background image as overlay
         try {
-            Image bgImg = new Image(getClass().getResourceAsStream("/icons/third.jpg"), 1920, 1080, true, true);
+            Image bgImg = new Image(getClass().getResourceAsStream("/icons/third.jpg"));
+            if (bgImg.isError()) {
+                throw new Exception("Background image not found or failed to load.");
+            }
             ImageView bgView = new ImageView(bgImg);
             bgView.setPreserveRatio(true);
             StackPane stack = new StackPane(bgView, mainPane);
             Scene scene = new Scene(stack, 1200, 800);
             primaryStage.setScene(scene);
         } catch (Exception e) {
+            System.err.println("Failed to load background image: " + e.getMessage());
             Scene scene = new Scene(mainPane, 1200, 800);
             primaryStage.setScene(scene);
         }

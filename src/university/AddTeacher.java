@@ -58,7 +58,7 @@ public class AddTeacher extends Application {
         empIdField = createStyledTextField();
         empIdField.setEditable(true);
 
-        String[] education = {"BSc","B.Tech", "BBA", "BE", "Msc", "MBA", "MCA", "BA", "BCom", "PhD"};
+        String[] education = {"BSc","Msc", "PhD","BBA", "BE",  "MBA", "MCA", "BA", "BCom",};
         educationCombo = new ComboBox<>();
         educationCombo.getItems().addAll(education);
         educationCombo.setPrefWidth(200);
@@ -103,7 +103,7 @@ public class AddTeacher extends Application {
         // Row 5
         formPanel.add(createStyledLabel("Graduate(CGPA):"), 0, 4);
         formPanel.add(class12Field, 1, 4);
-        formPanel.add(createStyledLabel("CNIC No:"), 2, 4);
+        formPanel.add(createStyledLabel("NIC No:"), 2, 4);
         formPanel.add(cnicField, 3, 4);
         // Row 6
         formPanel.add(createStyledLabel("Education:"), 0, 5);
@@ -272,8 +272,13 @@ public class AddTeacher extends Application {
             return false;
         }
         if (cnicField.getText().trim().isEmpty()) {
-            showValidationError("Please enter CNIC number.");
+            showValidationError("Please enter NIC number.");
             cnicField.requestFocus();
+            return false;
+        }
+        if (empIdField.getText().trim().isEmpty()) {
+            showValidationError("Please enter employee ID.");
+            empIdField.requestFocus();
             return false;
         }
         return true;

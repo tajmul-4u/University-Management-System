@@ -163,8 +163,12 @@ public class Login extends Application {
                     break;
                 }
             }
-        } catch (Exception e) {
+        } catch (java.io.FileNotFoundException e) {
             showAlert(Alert.AlertType.ERROR, "Error", "Login file not found.");
+            return; // Exit the method if the file is not found
+        } catch (Exception e) {
+            showAlert(Alert.AlertType.ERROR, "Error", "An error occurred while reading the login file.");
+            return; // Exit on other errors as well
         }
 
         if (valid) {

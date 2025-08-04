@@ -58,7 +58,7 @@ public class AddStudent extends Application {
         rollNoField = createStyledTextField();
         rollNoField.setEditable(true);
 
-        String[] courses = {"B.Sc", "BBA", "BE", "B.Tech", "Msc", "MBA", "MCA", "BA", "BCom"};
+        String[] courses = {"B.Sc","Msc","BBA", "MBA", "BA", "BCom"};
         courseCombo = new ComboBox<>();
         courseCombo.getItems().addAll(courses);
         courseCombo.setPrefWidth(200);
@@ -95,15 +95,15 @@ public class AddStudent extends Application {
         // Row 5
         formPanel.add(createStyledLabel("Class XII (GPA):"), 0, 4);
         formPanel.add(class12Field, 1, 4);
-        formPanel.add(createStyledLabel("CNIC No:"), 2, 4);
+        formPanel.add(createStyledLabel("NIC No:"), 2, 4);
         formPanel.add(cnicField, 3, 4);
         // Row 6
         formPanel.add(createStyledLabel("Roll No:"), 0, 5);
         formPanel.add(rollNoField, 1, 5);
-        formPanel.add(createStyledLabel("Course:"), 2, 5);
+        formPanel.add(createStyledLabel("Degree:"), 2, 5);
         formPanel.add(courseCombo, 3, 5);
         // Row 7
-        formPanel.add(createStyledLabel("Branch:"), 0, 6);
+        formPanel.add(createStyledLabel("Department:"), 0, 6);
         formPanel.add(branchCombo, 1, 6);
 
         // Buttons
@@ -238,8 +238,13 @@ public class AddStudent extends Application {
             return false;
         }
         if (cnicField.getText().trim().isEmpty()) {
-            showValidationError("Please enter CNIC number.");
+            showValidationError("Please enter NIC number.");
             cnicField.requestFocus();
+            return false;
+        }
+        if (rollNoField.getText().trim().isEmpty()) {
+            showValidationError("Please enter roll number.");
+            rollNoField.requestFocus();
             return false;
         }
         return true;

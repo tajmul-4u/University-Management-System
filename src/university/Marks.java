@@ -91,6 +91,12 @@ public class Marks extends Application {
             if (!marksFound) {
                 textArea.appendText("\nNo marks record found for Roll No: " + rollNo);
             }
+        } catch (java.io.FileNotFoundException e) {
+            javafx.scene.control.Alert alert = new javafx.scene.control.Alert(javafx.scene.control.Alert.AlertType.ERROR);
+            alert.setTitle("File Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Error: File not found. Please make sure subjects.txt and marks.txt exist.");
+            alert.showAndWait();
         } catch (Exception e) {
             e.printStackTrace();
             javafx.scene.control.Alert alert = new javafx.scene.control.Alert(javafx.scene.control.Alert.AlertType.ERROR);

@@ -121,6 +121,16 @@ public class EnterMarks extends Application {
             showError("Roll number cannot be empty.");
             return;
         }
+
+        if (sub1Field.getText().trim().isEmpty() || mark1Field.getText().trim().isEmpty() ||
+            sub2Field.getText().trim().isEmpty() || mark2Field.getText().trim().isEmpty() ||
+            sub3Field.getText().trim().isEmpty() || mark3Field.getText().trim().isEmpty() ||
+            sub4Field.getText().trim().isEmpty() || mark4Field.getText().trim().isEmpty() ||
+            sub5Field.getText().trim().isEmpty() || mark5Field.getText().trim().isEmpty()) {
+            showError("All subject and mark fields must be filled.");
+            return;
+        }
+
         try {
             // Save subjects to file
             String subjectRecord = String.join(",",

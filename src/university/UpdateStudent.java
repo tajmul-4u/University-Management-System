@@ -176,6 +176,8 @@ public class UpdateStudent extends Application {
             } else {
                 showAlert(Alert.AlertType.ERROR, "Not Found", "No student found with Roll Number: " + rollNo);
             }
+        } catch (java.io.FileNotFoundException e) {
+            showError("Error: students.txt file not found.");
         } catch (Exception e) {
             showError("The error is: " + e.getMessage());
         }

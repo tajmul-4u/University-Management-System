@@ -122,6 +122,8 @@ public class StudentAttendance extends Application {
                     rollComboBox.getItems().add(parts[10]); // rollno
                 }
             }
+        } catch (java.io.FileNotFoundException e) {
+            showAlert(Alert.AlertType.ERROR, "File Error", "Error: students.txt file not found.");
         } catch (Exception e) {
             showAlert(Alert.AlertType.ERROR, "File Error", "Error loading student data: " + e.getMessage());
         }

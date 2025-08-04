@@ -214,6 +214,8 @@ public class TeacherDetails extends Application {
                     ));
                 }
             }
+        } catch (java.io.FileNotFoundException e) {
+            showAlert(Alert.AlertType.ERROR, "Error", "Error: teachers.txt file not found.");
         } catch (Exception e) {
             showAlert(Alert.AlertType.ERROR, "Error", "Error loading data: " + e.getMessage());
         }

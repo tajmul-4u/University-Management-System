@@ -63,6 +63,11 @@ public class Statistics {
                 }
             }
             totalTeachers.setText("Total Teachers: " + teacherCount);
+        } catch (java.io.FileNotFoundException e) {
+            totalStudents.setText("Total Students: Error (file not found)");
+            totalTeachers.setText("Total Teachers: Error (file not found)");
+            totalFaculties.setText("Total Faculties: Error (file not found)");
+            totalDepartments.setText("Total Departments: Error (file not found)");
         } catch (Exception e) {
             totalStudents.setText("Total Students: Error");
             totalTeachers.setText("Total Teachers: Error");

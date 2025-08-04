@@ -100,6 +100,12 @@ public class StudentDetails extends Application {
                     ));
                 }
             }
+        } catch (java.io.FileNotFoundException e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Error: students.txt file not found.");
+            alert.showAndWait();
         } catch (Exception e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");

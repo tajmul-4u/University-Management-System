@@ -131,6 +131,8 @@ public class StudentFeeForm extends Application {
             branchComboBox.setItems(FXCollections.observableArrayList("Computer Science", "Electrical", "Mechanical"));
             semesterComboBox.setItems(FXCollections.observableArrayList("1st Semester", "2nd Semester", "3rd Semester", "4th Semester"));
             courseComboBox.setItems(FXCollections.observableArrayList("B.Tech", "M.Tech", "MBA"));
+        } catch (java.io.FileNotFoundException e) {
+            showError("Failed to load data from file: students.txt not found.");
         } catch (Exception e) {
             e.printStackTrace();
             showError("Failed to load data from file");

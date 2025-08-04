@@ -177,6 +177,8 @@ public class UpdateTeacher extends Application {
             } else {
                 showError("No teacher found with Employee ID: " + empId);
             }
+        } catch (java.io.FileNotFoundException e) {
+            showError("Error: teachers.txt file not found.");
         } catch (Exception e) {
             showError("The error is: " + e.getMessage());
         }

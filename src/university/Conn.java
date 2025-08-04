@@ -1,9 +1,12 @@
 package university;
 
 import java.io.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Conn {
     private final String loginFile = "login.txt";
+    private static final Logger LOGGER = Logger.getLogger(Conn.class.getName());
 
     // Example: Check login credentials from file
     public boolean checkLogin(String username, String password) {
@@ -16,7 +19,7 @@ public class Conn {
                 }
             }
         } catch (IOException e) {
-            System.out.println("File error: " + e.getMessage());
+            LOGGER.log(Level.SEVERE, "File error: " + e.getMessage(), e);
         }
         return false;
     }
@@ -28,7 +31,7 @@ public class Conn {
             bw.newLine();
             return true;
         } catch (IOException e) {
-            System.out.println("File error: " + e.getMessage());
+            LOGGER.log(Level.SEVERE, "File error: " + e.getMessage(), e);
             return false;
         }
     }

@@ -122,7 +122,7 @@ public class FeeStructure extends Application {
                 }
             }
             feeTable.setItems(tableData);
-        } catch (Exception e) {
+        } catch (java.io.FileNotFoundException e) {
             // If file not found or error, fallback to hardcoded values
             tableData.addAll(
                 new FeeRow("Semester 1", "40,000", "35,000", "30,000", "28,000", "50,000", "45,000", "48,000"),
@@ -130,6 +130,9 @@ public class FeeStructure extends Application {
                 new FeeRow("Semester 3", "44,000", "37,000", "32,000", "30,000", "54,000", "47,000", "50,000")
             );
             feeTable.setItems(tableData);
+        } catch (Exception e) {
+            // Handle other exceptions
+            e.printStackTrace();
         }
     }
 

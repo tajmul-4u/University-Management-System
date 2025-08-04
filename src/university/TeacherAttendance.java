@@ -122,6 +122,8 @@ public class TeacherAttendance extends Application {
                     teacherIdComboBox.getItems().add(parts[0]); // emp_id
                 }
             }
+        } catch (java.io.FileNotFoundException e) {
+            showAlert(Alert.AlertType.ERROR, "File Error", "Error: teachers.txt file not found.");
         } catch (Exception e) {
             showAlert(Alert.AlertType.ERROR, "File Error", "Error loading teacher data: " + e.getMessage());
         }
