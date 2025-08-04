@@ -96,7 +96,17 @@ public class TeacherDetails extends Application {
         updatePanel.getChildren().addAll(updateLabel, updateBtn);
         updatePanel.setAlignment(Pos.CENTER);
 
-        actionPanel.getChildren().addAll(deletePanel, addPanel, updatePanel);
+        VBox backPanel = new VBox(10);
+        backPanel.setPadding(new Insets(10));
+        backPanel.setStyle("-fx-background-color: white; -fx-border-color: #BDBDBD; -fx-border-radius: 8; -fx-background-radius: 8;");
+        Label backLabel = new Label("Go Back");
+        backLabel.setFont(Font.font("Segoe UI", 12));
+        Button backBtn = createStyledButton("Back", "#607D8B");
+        backBtn.setOnAction(e -> stage.close());
+        backPanel.getChildren().addAll(backLabel, backBtn);
+        backPanel.setAlignment(Pos.CENTER);
+
+        actionPanel.getChildren().addAll(deletePanel, addPanel, updatePanel, backPanel);
 
         BorderPane root = new BorderPane();
         root.setTop(headerPanel);
@@ -147,7 +157,7 @@ public class TeacherDetails extends Application {
                     String line;
                     while ((line = reader.readLine()) != null) {
                         String[] parts = line.split(",");
-                        if (parts.length > 0 && parts[0].equals(empId)) {
+                        if (parts.length == 13 && parts[12].equals(empId)) {
                             found = true;
                             continue; // skip this line
                         }
@@ -161,8 +171,8 @@ public class TeacherDetails extends Application {
                 }
                 if (found) {
                     showAlert(Alert.AlertType.INFORMATION, "Success", "Teacher deleted successfully!");
-                    stage.close();
-                    new TeacherDetails().start(new Stage());
+                    loadData();
+                    empIdField.clear();
                 } else {
                     showAlert(Alert.AlertType.ERROR, "Not Found", "No teacher found with Employee ID: " + empId);
                 }

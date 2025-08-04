@@ -74,7 +74,7 @@ public class FeeStructure extends Application {
         VBox tableBox = new VBox();
         tableBox.setAlignment(Pos.CENTER);
         tableBox.setPadding(new Insets(30, 0, 0, 0));
-        tableBox.setBackground(new Background(new BackgroundFill(Color.WHITE, new CornerRadii(10), Insets.EMPTY)));
+        tableBox.setBackground(new Background(new javafx.scene.layout.BackgroundFill(Color.WHITE, new CornerRadii(10), Insets.EMPTY)));
         tableBox.setBorder(new Border(new BorderStroke(Color.web("#e5e7eb"), BorderStrokeStyle.SOLID, new CornerRadii(10), new BorderWidths(1))));
 
         feeTable = new TableView<>();
@@ -82,7 +82,19 @@ public class FeeStructure extends Application {
         feeTable.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
         setupTableColumns();
         populateTable();
-        tableBox.getChildren().add(feeTable);
+
+        javafx.scene.control.Button backButton = new javafx.scene.control.Button("Back");
+        backButton.setStyle("-fx-background-color: #607D8B; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10 20; -fx-background-radius: 5;");
+        backButton.setOnAction(e -> {
+            Stage stage = (Stage) backButton.getScene().getWindow();
+            stage.close();
+        });
+
+        VBox layout = new VBox(20, feeTable, backButton);
+        layout.setAlignment(Pos.CENTER);
+        layout.setPadding(new Insets(20));
+
+        tableBox.getChildren().add(layout);
         return tableBox;
     }
 

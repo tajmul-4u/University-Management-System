@@ -44,7 +44,7 @@ public class Project extends Application {
         menuBar.setStyle("-fx-background-color: #34495E; -fx-padding: 8 10 8 10; -fx-font-size: 14px;");
 
         // Master Menu
-        Menu master = createModernMenu("Master", "#3498DB");
+        Menu master = createModernMenu("Join", "#3498DB");
         MenuItem m1 = createModernMenuItem("New Faculty", "/icons/icon1.png", "Ctrl+D");
         MenuItem m2 = createModernMenuItem("New Student Admission", "/icons/icon2.png", "Ctrl+M");
         m1.setOnAction(e -> new AddTeacher().start(new Stage()));

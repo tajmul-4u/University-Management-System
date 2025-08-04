@@ -1,2 +1,4 @@
 admin,admin
 tajmul,tajmul
+asdf,asdf
+rabbi,rabbi
