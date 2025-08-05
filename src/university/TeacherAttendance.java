@@ -43,21 +43,13 @@ public class TeacherAttendance extends Application {
         teacherIdComboBox.setPrefWidth(200);
         teacherIdComboBox.setStyle("-fx-font-size: 14;");
 
-        Label firstHalfLabel = new Label("First Half:");
-        firstHalfLabel.setFont(Font.font("Segoe UI", 14));
+        Label attendanceLabel = new Label("Attendance:");
+        attendanceLabel.setFont(Font.font("Segoe UI", 14));
         firstHalfCombo = new ComboBox<>();
         firstHalfCombo.getItems().addAll("Present", "Absent", "Leave");
         firstHalfCombo.setPrefWidth(200);
         firstHalfCombo.setStyle("-fx-font-size: 14;");
         firstHalfCombo.getSelectionModel().selectFirst();
-
-        Label secondHalfLabel = new Label("Second Half:");
-        secondHalfLabel.setFont(Font.font("Segoe UI", 14));
-        secondHalfCombo = new ComboBox<>();
-        secondHalfCombo.getItems().addAll("Present", "Absent", "Leave");
-        secondHalfCombo.setPrefWidth(200);
-        secondHalfCombo.setStyle("-fx-font-size: 14;");
-        secondHalfCombo.getSelectionModel().selectFirst();
 
         // Buttons
         submitButton = createModernButton("Submit Attendance", "#8E44AD", "#7D3C98");
@@ -71,10 +63,8 @@ public class TeacherAttendance extends Application {
         formGrid.setStyle("-fx-background-color: white; -fx-border-color: #DCDCDC; -fx-border-width: 1; -fx-background-radius: 8; -fx-border-radius: 8;");
         formGrid.add(teacherIdLabel, 0, 0);
         formGrid.add(teacherIdComboBox, 1, 0);
-        formGrid.add(firstHalfLabel, 0, 1);
+        formGrid.add(attendanceLabel, 0, 1);
         formGrid.add(firstHalfCombo, 1, 1);
-        formGrid.add(secondHalfLabel, 0, 2);
-        formGrid.add(secondHalfCombo, 1, 2);
 
         HBox buttonBox = new HBox(20, submitButton, cancelButton);
         buttonBox.setAlignment(Pos.CENTER);
@@ -134,19 +124,17 @@ public class TeacherAttendance extends Application {
             showAlert(Alert.AlertType.WARNING, "Input Required", "Please select a teacher ID.");
             return;
         }
-        String firstHalf = firstHalfCombo.getValue();
-        String secondHalf = secondHalfCombo.getValue();
+        String attendance = firstHalfCombo.getValue();
         String dateTime = new SimpleDateFormat("dd/MM/yyyy HH:mm").format(new Date());
         String teacherId = teacherIdComboBox.getValue();
         try (java.io.BufferedWriter bw = new java.io.BufferedWriter(new java.io.FileWriter("attendance_teacher.txt", true))) {
-            String record = String.join(",", teacherId, dateTime, firstHalf, secondHalf);
+            String record = String.join(",", teacherId, dateTime, attendance);
             bw.write(record);
             bw.newLine();
             showAlert(Alert.AlertType.INFORMATION, "Success",
                     "Teacher attendance recorded successfully!\n\n" +
                             "Teacher ID: " + teacherId + "\n" +
-                            "First Half: " + firstHalf + "\n" +
-                            "Second Half: " + secondHalf + "\n" +
+                            "Attendance: " + attendance + "\n" +
                             "Date: " + dateTime);
             stage.close();
         } catch (Exception ee) {

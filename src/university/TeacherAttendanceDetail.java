@@ -66,29 +66,7 @@ public class TeacherAttendanceDetail extends Application {
         attendanceData = FXCollections.observableArrayList();
         attendanceTable.setItems(attendanceData);
         attendanceTable.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
-        attendanceTable.setRowFactory(tv -> new TableRow<AttendanceRecord>() {
-            @Override
-            protected void updateItem(AttendanceRecord item, boolean empty) {
-                super.updateItem(item, empty);
-                if (item == null || empty) {
-                    setStyle("");
-                } else {
-                    switch (item.getStatus()) {
-                        case "Full Day":
-                            setStyle("-fx-background-color: #d4edda; -fx-text-fill: #155724;");
-                            break;
-                        case "Half Day":
-                            setStyle("-fx-background-color: #fff3cd; -fx-text-fill: #856404;");
-                            break;
-                        case "Absent":
-                            setStyle("-fx-background-color: #f8d7da; -fx-text-fill: #721c24;");
-                            break;
-                        default:
-                            setStyle("");
-                    }
-                }
-            }
-        });
+        
         setupTableColumns();
         attendanceTable.setPrefHeight(450);
 
@@ -107,19 +85,13 @@ public class TeacherAttendanceDetail extends Application {
         empIdCol.setStyle("-fx-alignment: CENTER;");
         TableColumn<AttendanceRecord, String> dateCol = new TableColumn<>("Date & Time");
         dateCol.setCellValueFactory(new PropertyValueFactory<>("date"));
-        TableColumn<AttendanceRecord, String> firstCol = new TableColumn<>("First Half");
-        firstCol.setCellValueFactory(new PropertyValueFactory<>("firstHalf"));
-        firstCol.setStyle("-fx-alignment: CENTER;");
-        TableColumn<AttendanceRecord, String> secondCol = new TableColumn<>("Second Half");
-        secondCol.setCellValueFactory(new PropertyValueFactory<>("secondHalf"));
-        secondCol.setStyle("-fx-alignment: CENTER;");
-        TableColumn<AttendanceRecord, String> statusCol = new TableColumn<>("Status");
-        statusCol.setCellValueFactory(new PropertyValueFactory<>("status"));
-        statusCol.setStyle("-fx-alignment: CENTER;");
+        TableColumn<AttendanceRecord, String> attendanceCol = new TableColumn<>("Attendance");
+        attendanceCol.setCellValueFactory(new PropertyValueFactory<>("attendance"));
+        attendanceCol.setStyle("-fx-alignment: CENTER;");
         TableColumn<AttendanceRecord, String> deptCol = new TableColumn<>("Department");
         deptCol.setCellValueFactory(new PropertyValueFactory<>("Department"));
         deptCol.setStyle("-fx-alignment: CENTER;");
-        attendanceTable.getColumns().addAll(empIdCol, dateCol, firstCol, secondCol, statusCol, deptCol);
+        attendanceTable.getColumns().addAll(empIdCol, dateCol, attendanceCol, deptCol);
     }
 
     private Button createStyledButton(String text, Color bgColor) {
@@ -175,14 +147,12 @@ public class TeacherAttendanceDetail extends Application {
                 String line;
                 while ((line = br.readLine()) != null) {
                     String[] parts = line.split(",");
-                    if (parts.length == 4) {
+                    if (parts.length == 3) {
                         String empId = parts[0];
                         String date = parts[1];
-                        String firstHalf = parts[2];
-                        String secondHalf = parts[3];
-                        String status = calculateAttendanceStatus(firstHalf, secondHalf);
+                        String attendance = parts[2];
                         String department = getDepartmentByEmpId(empId);
-                        attendanceData.add(new AttendanceRecord(empId, date, firstHalf, secondHalf, status, department));
+                        attendanceData.add(new AttendanceRecord(empId, date, attendance, department));
                         recordCount++;
                     }
                 }
@@ -222,17 +192,7 @@ public class TeacherAttendanceDetail extends Application {
         return "Unknown";
     }
 
-    private String calculateAttendanceStatus(String firstHalf, String secondHalf) {
-        boolean firstPresent = "Present".equalsIgnoreCase(firstHalf);
-        boolean secondPresent = "Present".equalsIgnoreCase(secondHalf);
-        if (firstPresent && secondPresent) {
-            return "Full Day";
-        } else if (firstPresent || secondPresent) {
-            return "Half Day";
-        } else {
-            return "Absent";
-        }
-    }
+    
 
     private void showErrorMessage(String title, String message) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -283,23 +243,17 @@ public class TeacherAttendanceDetail extends Application {
     public static class AttendanceRecord {
         private final SimpleStringProperty empId;
         private final SimpleStringProperty date;
-        private final SimpleStringProperty firstHalf;
-        private final SimpleStringProperty secondHalf;
-        private final SimpleStringProperty status;
+        private final SimpleStringProperty attendance;
         private final SimpleStringProperty department;
-        public AttendanceRecord(String empId, String date, String firstHalf, String secondHalf, String status, String department) {
+        public AttendanceRecord(String empId, String date, String attendance, String department) {
             this.empId = new SimpleStringProperty(empId);
             this.date = new SimpleStringProperty(date);
-            this.firstHalf = new SimpleStringProperty(firstHalf);
-            this.secondHalf = new SimpleStringProperty(secondHalf);
-            this.status = new SimpleStringProperty(status);
+            this.attendance = new SimpleStringProperty(attendance);
             this.department = new SimpleStringProperty(department);
         }
         public String getEmpId() { return empId.get(); }
         public String getDate() { return date.get(); }
-        public String getFirstHalf() { return firstHalf.get(); }
-        public String getSecondHalf() { return secondHalf.get(); }
-        public String getStatus() { return status.get(); }
+        public String getAttendance() { return attendance.get(); }
         public String getDepartment() { return department.get(); }
     }
 

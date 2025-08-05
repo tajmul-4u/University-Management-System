@@ -153,7 +153,7 @@ public class Login extends Application {
         String u = usernameField.getText().trim();
         String v = passwordField.getText().trim();
 
-        // Dummy checkLogin method (Replace with actual file-based or DB check)
+        // Dummy checkLogin method (Replace with actual file-based or File check)
         boolean valid = false;
         try (java.util.Scanner scanner = new java.util.Scanner(new java.io.File("login.txt"))) {
             while (scanner.hasNextLine()) {

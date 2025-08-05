@@ -79,21 +79,11 @@ public class Project extends Application {
         b2.setOnAction(e -> new TeacherAttendanceDetail().start(new Stage()));
         attendanceDetail.getItems().addAll(b1, b2);
 
-        // Examination Menu
+        // Enter Marks Menu
         Menu exam = createModernMenu("Examination", "#E67E22");
-        MenuItem c1 = createModernMenuItem("Examination Details", "/icons/icon16.png", "Ctrl+P");
         MenuItem c2 = createModernMenuItem("Enter Marks", "/icons/icon17.png", "Ctrl+B");
-        c1.setOnAction(e -> new ExaminationDetails().start(new Stage()));
         c2.setOnAction(e -> new EnterMarks().start(new Stage()));
-        exam.getItems().addAll(c1, c2);
-
-        // Update Details Menu
-        Menu report = createModernMenu("Update Details", "#3498DB");
-        MenuItem r1 = createModernMenuItem("Update Students", "/icons/icon5.png", "Ctrl+R");
-        MenuItem r2 = createModernMenuItem("Update Teachers", "/icons/icon6.png", "Ctrl+R");
-        r1.setOnAction(e -> new UpdateStudent().start(new Stage()));
-        r2.setOnAction(e -> new UpdateTeacher().start(new Stage()));
-        report.getItems().addAll(r1, r2);
+        exam.getItems().addAll(c2);
 
         // Statistics Menu (separate)
         Menu statisticsMenu = createModernMenu("Statistics", "#8E44AD");
@@ -107,7 +97,7 @@ public class Project extends Application {
         ex.setOnAction(e -> System.exit(0));
         exit.getItems().add(ex);
 
-        menuBar.getMenus().addAll(master, user, attendance, attendanceDetail, exam, report, statisticsMenu, exit);
+        menuBar.getMenus().addAll(master, user, attendance, attendanceDetail, exam, statisticsMenu, exit);
         
         HBox menuContainer = new HBox(menuBar);
         menuContainer.setAlignment(Pos.CENTER);

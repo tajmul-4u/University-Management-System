@@ -43,21 +43,13 @@ public class StudentAttendance extends Application {
         rollComboBox.setPrefWidth(200);
         rollComboBox.setStyle("-fx-font-size: 14;");
 
-        Label firstHalfLabel = new Label("First Half:");
-        firstHalfLabel.setFont(Font.font("Segoe UI", 14));
+        Label attendanceLabel = new Label("Attendance:");
+        attendanceLabel.setFont(Font.font("Segoe UI", 14));
         firstHalfCombo = new ComboBox<>();
         firstHalfCombo.getItems().addAll("Present", "Absent", "Leave");
         firstHalfCombo.setPrefWidth(200);
         firstHalfCombo.setStyle("-fx-font-size: 14;");
         firstHalfCombo.getSelectionModel().selectFirst();
-
-        Label secondHalfLabel = new Label("Second Half:");
-        secondHalfLabel.setFont(Font.font("Segoe UI", 14));
-        secondHalfCombo = new ComboBox<>();
-        secondHalfCombo.getItems().addAll("Present", "Absent", "Leave");
-        secondHalfCombo.setPrefWidth(200);
-        secondHalfCombo.setStyle("-fx-font-size: 14;");
-        secondHalfCombo.getSelectionModel().selectFirst();
 
         // Buttons
         submitButton = createModernButton("Submit Attendance", "#2ecc71", "#27ae60");
@@ -71,10 +63,8 @@ public class StudentAttendance extends Application {
         formGrid.setStyle("-fx-background-color: white; -fx-border-color: #DCDCDC; -fx-border-width: 1; -fx-background-radius: 8; -fx-border-radius: 8;");
         formGrid.add(rollLabel, 0, 0);
         formGrid.add(rollComboBox, 1, 0);
-        formGrid.add(firstHalfLabel, 0, 1);
+        formGrid.add(attendanceLabel, 0, 1);
         formGrid.add(firstHalfCombo, 1, 1);
-        formGrid.add(secondHalfLabel, 0, 2);
-        formGrid.add(secondHalfCombo, 1, 2);
 
         HBox buttonBox = new HBox(20, submitButton, cancelButton);
         buttonBox.setAlignment(Pos.CENTER);
@@ -134,12 +124,11 @@ public class StudentAttendance extends Application {
             showAlert(Alert.AlertType.WARNING, "Input Required", "Please select a roll number.");
             return;
         }
-        String firstHalf = firstHalfCombo.getValue();
-        String secondHalf = secondHalfCombo.getValue();
+        String attendance = firstHalfCombo.getValue();
         String dateTime = new java.text.SimpleDateFormat("dd/MM/yyyy HH:mm").format(new java.util.Date());
         String rollNumber = rollComboBox.getValue();
         String attendanceRecord = String.join(",",
-            rollNumber, dateTime, firstHalf, secondHalf
+            rollNumber, dateTime, attendance
         );
         try (java.io.BufferedWriter bw = new java.io.BufferedWriter(new java.io.FileWriter("attendance_student.txt", true))) {
             bw.write(attendanceRecord);
@@ -147,8 +136,7 @@ public class StudentAttendance extends Application {
             showAlert(Alert.AlertType.INFORMATION, "Success",
                     "Attendance recorded successfully!\n\n" +
                             "Roll Number: " + rollNumber + "\n" +
-                            "First Half: " + firstHalf + "\n" +
-                            "Second Half: " + secondHalf + "\n" +
+                            "Attendance: " + attendance + "\n" +
                             "Date: " + dateTime);
             stage.close();
         } catch (Exception ee) {

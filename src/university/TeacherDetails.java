@@ -86,16 +86,6 @@ public class TeacherDetails extends Application {
         addPanel.setAlignment(Pos.CENTER);
 
         // Update Panel
-        VBox updatePanel = new VBox(10);
-        updatePanel.setPadding(new Insets(10));
-        updatePanel.setStyle("-fx-background-color: white; -fx-border-color: #BDBDBD; -fx-border-radius: 8; -fx-background-radius: 8;");
-        Label updateLabel = new Label("Update Teacher Details");
-        updateLabel.setFont(Font.font("Segoe UI", 12));
-        Button updateBtn = createStyledButton("Update", "#FF5722");
-        updateBtn.setOnAction(e -> new UpdateTeacher().start(new Stage()));
-        updatePanel.getChildren().addAll(updateLabel, updateBtn);
-        updatePanel.setAlignment(Pos.CENTER);
-
         VBox backPanel = new VBox(10);
         backPanel.setPadding(new Insets(10));
         backPanel.setStyle("-fx-background-color: white; -fx-border-color: #BDBDBD; -fx-border-radius: 8; -fx-background-radius: 8;");
@@ -106,7 +96,7 @@ public class TeacherDetails extends Application {
         backPanel.getChildren().addAll(backLabel, backBtn);
         backPanel.setAlignment(Pos.CENTER);
 
-        actionPanel.getChildren().addAll(deletePanel, addPanel, updatePanel, backPanel);
+        actionPanel.getChildren().addAll(deletePanel, addPanel, backPanel);
 
         BorderPane root = new BorderPane();
         root.setTop(headerPanel);
